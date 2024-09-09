@@ -4,8 +4,6 @@ import com.example.TaskUP.dto.AdminDto;
 import com.example.TaskUP.dto.AthenticatedAdminDto;
 import com.example.TaskUP.model.Admin;
 import com.example.TaskUP.services.AdminService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class AdminController {
     private final AdminService adminService;
-    private static final Logger logger = LoggerFactory.getLogger(AdminController.class);
 
 
     @Autowired
