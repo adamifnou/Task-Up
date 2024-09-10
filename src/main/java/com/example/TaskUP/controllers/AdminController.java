@@ -25,7 +25,10 @@ public class AdminController {
     public ResponseEntity<Object> registerAdmin(@RequestBody  AdminDto adminDto) {
        try {
            adminService.saveAdmin(adminDto);
-           return ResponseEntity.ok("Admin registered successfully"+ adminDto);
+           return new ResponseEntity<>(
+                     adminDto,
+                     org.springframework.http.HttpStatus.OK
+           );
        } catch (Exception e) {
            return ResponseEntity.badRequest().body("Error: " + e.getMessage());
        }
