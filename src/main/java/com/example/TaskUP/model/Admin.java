@@ -1,5 +1,6 @@
 package com.example.TaskUP.model;
 
+import com.example.TaskUP.constants.UserRole;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,8 +14,11 @@ public class Admin {
 
     private String badgeNumber;
     private String password;
+    private UserRole role = UserRole.ADMIN;
 
-
+    public UserRole getRole() {
+        return role;
+    }
 
     public Integer getId() {
         return id;

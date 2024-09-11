@@ -1,5 +1,6 @@
 package com.example.TaskUP.model;
 
+import com.example.TaskUP.constants.UserRole;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
@@ -13,6 +14,11 @@ public class User {
     private String username;
     private int age;
     private String password;
+    private UserRole role = UserRole.USER;
+
+    public UserRole getRole() {
+        return role;
+    }
 
     @JsonBackReference
     @OneToMany(mappedBy = "creator")
